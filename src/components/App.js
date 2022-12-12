@@ -3,6 +3,8 @@ import getDataFromAPI from '../services/api';
 import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import { NavLink, Routes, Route } from 'react-router-dom';
+import CharacterDetail from './CharacterDetail';
 
 function App() {
   // VARIABLES ESTADO
@@ -17,7 +19,12 @@ function App() {
       setDataCharacter(cleanData);
     });
   }, []);
-
+  // FUNCIONES ROUTER
+  const findCharacter = (id) => {
+    return dataCharacter.find(
+      (oneCharacter) => oneCharacter.id === parseInt(id)
+    );
+  };
   // FUNCIONES HANDLER
 
   const handleFilterByName = (value) => {
@@ -34,7 +41,20 @@ function App() {
     <>
       <h1>Rick and Morty</h1>
       <Filters handleFilterByName={handleFilterByName} />
-      <CharacterList characters={charactersFiltered}></CharacterList>
+      <Routes>
+        <Route
+          path='/'
+          element={
+            <CharacterList characters={charactersFiltered}></CharacterList>
+          }
+        />
+        <Route
+          path='/character/:characterId'
+          element={
+            <CharacterDetail findCharacter={findCharacter}></CharacterDetail>
+          }
+        />
+      </Routes>
     </>
   );
 }
