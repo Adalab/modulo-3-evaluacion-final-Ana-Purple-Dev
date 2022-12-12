@@ -7,7 +7,10 @@ const Filters = (props) => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <FilterByName handleFilterByName={props.handleFilterByName} />
+        <FilterByName
+          handleFilterByName={props.handleFilterByName}
+          filterByName={props.filterByName}
+        />
       </form>
     </>
   );

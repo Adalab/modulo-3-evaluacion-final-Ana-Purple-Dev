@@ -3,14 +3,15 @@ import getDataFromAPI from '../services/api';
 import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
-import { NavLink, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail';
+import ls from '../services/localStorage';
 
 function App() {
   // VARIABLES ESTADO
 
   const [dataCharacter, setDataCharacter] = useState([]);
-  const [filterByName, setFilterByName] = useState('');
+  const [filterByName, setFilterByName] = useState(ls.get('filterByName', ''));
 
   // USEEFFECT
   useEffect(() => {
@@ -28,6 +29,7 @@ function App() {
   // FUNCIONES HANDLER
 
   const handleFilterByName = (value) => {
+    ls.set('filterByName', value);
     setFilterByName(value);
   };
 
@@ -40,12 +42,18 @@ function App() {
   return (
     <>
       <h1>Rick and Morty</h1>
-      <Filters handleFilterByName={handleFilterByName} />
+
       <Routes>
         <Route
           path='/'
           element={
-            <CharacterList characters={charactersFiltered}></CharacterList>
+            <>
+              <Filters
+                handleFilterByName={handleFilterByName}
+                filterByName={filterByName}
+              />
+              <CharacterList characters={charactersFiltered}></CharacterList>
+            </>
           }
         />
         <Route
