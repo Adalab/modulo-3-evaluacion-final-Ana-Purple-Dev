@@ -14,9 +14,14 @@ const CharacterList = ({ characters }) => {
   return (
     <section>
       <ul>
-        {characterElement.length > 0
-          ? characterElement
-          : 'No hay ningún personaje con ese nombre'}
+        {characterElement.length > 0 ? (
+          characterElement
+        ) : (
+          <>
+            <p>No hay ningún personaje con ese nombre</p>
+            <img src='./images/error.jpeg' alt='rick and morty' />
+          </>
+        )}
       </ul>
     </section>
   );
