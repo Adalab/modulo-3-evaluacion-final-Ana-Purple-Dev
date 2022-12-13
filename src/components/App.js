@@ -21,6 +21,7 @@ function App() {
     });
   }, []);
   // FUNCIONES ROUTER
+
   const findCharacter = (id) => {
     return dataCharacter.find(
       (oneCharacter) => oneCharacter.id === parseInt(id)
@@ -52,6 +53,7 @@ function App() {
                 handleFilterByName={handleFilterByName}
                 filterByName={filterByName}
               />
+
               <CharacterList characters={charactersFiltered}></CharacterList>
             </>
           }
