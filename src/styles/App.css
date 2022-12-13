@@ -1,0 +1,32 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+}
+
+.header {
+  text-align: center;
+  background-color: transparent;
+}
+
+.main {
+  display: flex;
+  gap: 20px;
+}
+
+.main .filter {
+  background-color: #fff;
+  border: solid rgba(0, 0, 0, 0.08) 1px;
+  border-radius: 0.8rem;
+  padding: 10px;
+}
+
+.list {
+  padding: 10px;
+  border: solid rgba(0, 0, 0, 0.08) 1px;
+  border-radius: 0.8rem;
+}
+
+.card {
+  width: 50%;
+}
