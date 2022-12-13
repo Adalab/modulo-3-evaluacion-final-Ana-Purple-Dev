@@ -6,7 +6,11 @@ const CharacterList = ({ characters }) => {
   });
   return (
     <section>
-      <ul>{characterElement}</ul>
+      <ul>
+        {characterElement.length > 0
+          ? characterElement
+          : 'No hay ningún personaje con ese nombre'}
+      </ul>
     </section>
   );
 };
