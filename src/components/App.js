@@ -12,6 +12,7 @@ function App() {
 
   const [dataCharacter, setDataCharacter] = useState([]);
   const [filterByName, setFilterByName] = useState(ls.get('filterByName', ''));
+  const [filterBySpecie, setFilterBySpecie] = useState('All');
 
   // USEEFFECT
   useEffect(() => {
@@ -29,6 +30,10 @@ function App() {
   };
   // FUNCIONES HANDLER
 
+  const handleFilterBySpecie = (value) => {
+    setFilterBySpecie(value);
+  };
+
   const handleFilterByName = (value) => {
     ls.set('filterByName', value);
     setFilterByName(value);
@@ -36,9 +41,15 @@ function App() {
 
   // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
 
-  const charactersFiltered = dataCharacter.filter((character) => {
-    return character.name.toLowerCase().includes(filterByName.toLowerCase());
-  });
+  const charactersFiltered = dataCharacter
+    .filter((character) => {
+      return character.name.toLowerCase().includes(filterByName.toLowerCase());
+    })
+    .filter((character) => {
+      return filterBySpecie === 'All'
+        ? true
+        : character.species === filterBySpecie;
+    });
 
   return (
     <>
@@ -52,6 +63,7 @@ function App() {
               <Filters
                 handleFilterByName={handleFilterByName}
                 filterByName={filterByName}
+                handleFilterBySpecie={handleFilterBySpecie}
               />
 
               <CharacterList characters={charactersFiltered}></CharacterList>
