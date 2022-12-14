@@ -137,7 +137,7 @@
   width: 50%;
   border-radius: 15%;
 }
-@media (min-width: 320px) {
+@media (max-width: 320px) {
   .header {
     background-position: left;
   }
