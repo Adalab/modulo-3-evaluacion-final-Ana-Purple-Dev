@@ -1,17 +1,33 @@
+@font-face {
+  font-family: 'rickAndMorty';
+  src: URL('../styles/Fonts/rick.ttf') format('truetype');
+}
 * {
   padding: 0px;
   margin: 0px;
   text-decoration: none;
+  list-style: none;
 }
 
 .header {
-  text-align: center;
-  background-color: transparent;
+  width: 100%;
+  height: 40vh;
+  background-image: url(../../public/images/rick-morty-collection-banner_2376x.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .main {
   display: flex;
+  flex-direction: column;
   gap: 20px;
+  align-items: center;
+}
+.title {
+  margin-top: 40px;
+  font-family: 'rickAndMorty';
+  color: #52afc6;
 }
 
 .main .filter {
@@ -20,7 +36,26 @@
   border-radius: 0.8rem;
   padding: 10px;
 }
-
+.form {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+.form__label {
+  font-size: 20px;
+}
+.div__name {
+  width: 60%;
+  display: flex;
+  gap: 10px;
+}
+.div__specie {
+  display: flex;
+  gap: 10px;
+}
+.input__search {
+  width: 40%;
+}
 .list {
   padding: 10px;
   border: solid rgba(0, 0, 0, 0.08) 1px;

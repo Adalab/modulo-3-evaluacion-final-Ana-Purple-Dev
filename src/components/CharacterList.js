@@ -12,7 +12,7 @@ const CharacterList = ({ characters }) => {
   });
 
   return (
-    <section>
+    <section className='sectionList'>
       <ul>
         {characterElement.length > 0 ? (
           characterElement

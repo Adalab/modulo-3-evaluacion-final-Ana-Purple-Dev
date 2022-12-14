@@ -7,7 +7,7 @@ const Filters = (props) => {
   };
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className='form' onSubmit={handleSubmit}>
         <FilterByName
           handleFilterByName={props.handleFilterByName}
           filterByName={props.filterByName}

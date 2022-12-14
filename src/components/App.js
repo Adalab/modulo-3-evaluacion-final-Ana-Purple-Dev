@@ -53,30 +53,33 @@ function App() {
 
   return (
     <>
-      <h1>Rick and Morty</h1>
+      <header className='header'></header>
+      <main className='main'>
+        <h1 className='title'>Personajes de Rick and Morty</h1>
 
-      <Routes>
-        <Route
-          path='/'
-          element={
-            <>
-              <Filters
-                handleFilterByName={handleFilterByName}
-                filterByName={filterByName}
-                handleFilterBySpecie={handleFilterBySpecie}
-              />
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <Filters
+                  handleFilterByName={handleFilterByName}
+                  filterByName={filterByName}
+                  handleFilterBySpecie={handleFilterBySpecie}
+                />
 
-              <CharacterList characters={charactersFiltered}></CharacterList>
-            </>
-          }
-        />
-        <Route
-          path='/character/:characterId'
-          element={
-            <CharacterDetail findCharacter={findCharacter}></CharacterDetail>
-          }
-        />
-      </Routes>
+                <CharacterList characters={charactersFiltered}></CharacterList>
+              </>
+            }
+          />
+          <Route
+            path='/character/:characterId'
+            element={
+              <CharacterDetail findCharacter={findCharacter}></CharacterDetail>
+            }
+          />
+        </Routes>
+      </main>
     </>
   );
 }
