@@ -18,8 +18,12 @@ const CharacterList = ({ characters }) => {
           characterElement
         ) : (
           <>
-            <p>No hay ningún personaje con ese nombre</p>
-            <img src='./images/error.jpeg' alt='rick and morty' />
+            <div className='div_error'>
+              <p className='error__msg'>
+                No hay ningun personaje con ese nombre
+              </p>
+              <img src='../images/error.jpeg' alt='rick and morty' />
+            </div>
           </>
         )}
       </ul>

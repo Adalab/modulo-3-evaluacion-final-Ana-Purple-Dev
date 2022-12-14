@@ -27,9 +27,10 @@
   align-items: center;
 }
 .title {
-  margin-top: 40px;
+  margin-top: 50px;
   font-family: 'rickAndMorty';
   color: #52afc6;
+  font-size: 45px;
 }
 
 .main .filter {
@@ -98,4 +99,19 @@
 }
 .text {
   color: #52afc6;
+}
+
+.div_error {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+
+  flex-direction: column;
+  gap: 40px;
+}
+.error__msg {
+  color: #fff;
+  font-family: 'rickAndMorty';
+  font-size: 30px;
+  text-align: center;
 }

@@ -3,7 +3,7 @@ import getDataFromAPI from '../services/api';
 import { useEffect, useState } from 'react';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail';
 import ls from '../services/localStorage';
 
@@ -54,7 +54,10 @@ function App() {
   return (
     <>
       <body className='body'>
-        <header className='header'></header>
+        <NavLink to='/'>
+          <header className='header'></header>
+        </NavLink>
+
         <main className='main'>
           <h1 className='title'>Personajes de Rick and Morty</h1>
 
