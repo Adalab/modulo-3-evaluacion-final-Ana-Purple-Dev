@@ -59,7 +59,13 @@ function App() {
         </NavLink>
 
         <main className='main'>
-          <h1 className='title'>Personajes de Rick and Morty</h1>
+          <NavLink to='/'>
+            <img
+              className='img_title'
+              src='https://1000marcas.net/wp-content/uploads/2022/04/Rick-and-Morty.png'
+              alt='logo de rick & morty'
+            />
+          </NavLink>
 
           <Routes>
             <Route

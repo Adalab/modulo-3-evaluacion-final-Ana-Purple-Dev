@@ -19,7 +19,7 @@ function CharacterCard(props) {
   };
   return (
     <li key={props.character.id} className='card'>
-      <NavLink to={`/character/${props.character.id}`}>
+      <NavLink to={`/character/${props.character.id}`} className='card__link'>
         <img
           className='card__img'
           src={props.character.image}
@@ -27,9 +27,9 @@ function CharacterCard(props) {
           title={`Foto de ${props.character.name}`}
         />
 
-        <h4 className='card__title'>{props.character.name}</h4>
-        <h4 className='card__species'>{speciesCharacter()}</h4>
-        <h4 className='card__status'>{statusCharacter()}</h4>
+        <h3 className='card__title'>{props.character.name}</h3>
+        <h4 className='card__species'>Especie: {speciesCharacter()}</h4>
+        <h4 className='card__status'>Estado: {statusCharacter()}</h4>
       </NavLink>
     </li>
   );

@@ -7,7 +7,7 @@ function CharacterDetail(props) {
   return (
     <>
       {characterFound ? (
-        <section>
+        <section className='detail__page'>
           <h2 className='detail title'>Detalles del personaje</h2>
           <img
             className='detail img'

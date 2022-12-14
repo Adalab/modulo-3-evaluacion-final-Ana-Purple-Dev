@@ -25,12 +25,14 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  background-image: url(https://i.pinimg.com/564x/a0/fb/9e/a0fb9eba4b967007c898638cb1a1de46.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.title {
-  margin-top: 50px;
-  font-family: 'rickAndMorty';
-  color: #52afc6;
-  font-size: 45px;
+.img_title {
+  width: 100%;
+  height: 40vh;
 }
 
 .main .filter {
@@ -41,7 +43,7 @@
 }
 .form {
   display: flex;
-  margin-top: 20px;
+
   justify-content: center;
   gap: 10px;
   width: 100%;
@@ -62,7 +64,6 @@
 }
 .input__search {
   width: 40%;
-
   border: 2px solid #52afc6;
 }
 .list {
@@ -78,8 +79,15 @@
   gap: 40px;
 }
 .card {
-  background-color: rgb(26, 25, 47);
+  background-color: rgba(26, 25, 47, 0.885);
   border-radius: 5%;
+}
+.card__link {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
 }
 .card:hover {
   box-shadow: 9px 9px 48px 7px rgba(111, 216, 19, 0.81);
@@ -93,9 +101,14 @@
 .card__title {
   color: #fff;
 }
+.card__species {
+  color: #52afc6;
+}
+.card__status {
+  color: #60b358;
+}
 .detail {
-  color: #fff;
-  font-family: 'rickAndMorty';
+  color: #60b358;
 }
 .text {
   color: #52afc6;
@@ -105,7 +118,6 @@
   margin-top: 50px;
   width: 100%;
   display: flex;
-
   flex-direction: column;
   gap: 40px;
 }
@@ -114,4 +126,36 @@
   font-family: 'rickAndMorty';
   font-size: 30px;
   text-align: center;
+}
+
+.detail__page {
+  background-color: rgba(26, 25, 47, 0.885);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 50%;
+  border-radius: 15%;
+}
+@media (min-width: 320px) {
+  .header {
+    background-position: left;
+  }
+  .form {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .div__name {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+  }
+  .card__list {
+    margin: 30px 50px 70px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
