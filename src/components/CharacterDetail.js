@@ -3,26 +3,28 @@ import { useParams } from 'react-router-dom';
 function CharacterDetail(props) {
   const params = useParams();
   const characterFound = props.findCharacter(params.characterId);
+
   return (
     <>
-      <h2>Detalles del personaje</h2>
+      <h2 className='detail title'>Detalles del personaje</h2>
       <img
-        className='card__img'
+        className='detail img'
         src={characterFound.image}
         alt={`Foto de ${characterFound.name}`}
         title={`Foto de ${characterFound.name}`}
       />
-      <h3>Nombre</h3>
-      <h4>{characterFound.name}</h4>
-      <h3>Especie</h3>
-      <h4>{characterFound.species}</h4>
-
-      <h3>Planeta de Origen</h3>
-      <h4>{characterFound.origin.name}</h4>
-      <h3>Número de episodios en los que aparece</h3>
-      <h4>{characterFound.episode}</h4>
-      <h3>Estado</h3>
-      <h4>{characterFound.status}</h4>
+      <h3 className='detail name'>Nombre</h3>
+      <h4 className='text'>{characterFound.name}</h4>
+      <h3 className='detail specie'> Especie</h3>
+      <h4 className='text'>{characterFound.species}</h4>
+      <h3 className='detail origin'>Planeta de Origen</h3>
+      <h4 className='text'>{characterFound.origin}</h4>
+      <h3 className='detail episodes'>
+        Número de episodios en los que aparece
+      </h3>
+      <h4 className='text'>{characterFound.episode}</h4>
+      <h3 className='detail status'>Estado</h3>
+      <h4 className='text'>{characterFound.status}</h4>
     </>
   );
 }

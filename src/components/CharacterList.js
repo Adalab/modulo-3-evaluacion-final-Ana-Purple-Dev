@@ -13,7 +13,7 @@ const CharacterList = ({ characters }) => {
 
   return (
     <section className='sectionList'>
-      <ul>
+      <ul className='card__list'>
         {characterElement.length > 0 ? (
           characterElement
         ) : (
