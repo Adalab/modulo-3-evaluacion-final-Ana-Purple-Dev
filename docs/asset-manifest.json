@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "./static/css/main.66931163.css",
+    "main.css": "./static/css/main.dc5704a7.css",
     "main.js": "./static/js/main.058afc58.js",
     "static/media/rick-morty-collection-banner_2376x.webp": "./static/media/rick-morty-collection-banner_2376x.660b7b75847c28ad149c.webp",
     "static/media/rick.ttf": "./static/media/rick.c3d1dfc692e3547fed16.ttf",
     "index.html": "./index.html",
-    "main.66931163.css.map": "./static/css/main.66931163.css.map",
+    "main.dc5704a7.css.map": "./static/css/main.dc5704a7.css.map",
     "main.058afc58.js.map": "./static/js/main.058afc58.js.map"
   },
   "entrypoints": [
-    "static/css/main.66931163.css",
+    "static/css/main.dc5704a7.css",
     "static/js/main.058afc58.js"
   ]
 }
