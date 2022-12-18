@@ -13,11 +13,11 @@ function App() {
   const [dataCharacter, setDataCharacter] = useState([]);
   const [filterByName, setFilterByName] = useState(ls.get('filterByName', ''));
   const [filterBySpecie, setFilterBySpecie] = useState('All');
+  const [filterByGender, setFilterByGender] = useState('All');
 
   // USEEFFECT
   useEffect(() => {
     getDataFromAPI().then((cleanData) => {
-      console.log(cleanData);
       setDataCharacter(cleanData);
     });
   }, []);
@@ -29,6 +29,10 @@ function App() {
     );
   };
   // FUNCIONES HANDLER
+
+  const handleFilterByGender = (value) => {
+    setFilterByGender(value);
+  };
 
   const handleFilterBySpecie = (value) => {
     setFilterBySpecie(value);
@@ -49,6 +53,11 @@ function App() {
       return filterBySpecie === 'All'
         ? true
         : character.species === filterBySpecie;
+    })
+    .filter((character) => {
+      return filterByGender === 'All'
+        ? true
+        : character.gender === filterByGender;
     });
 
   return (
@@ -76,6 +85,7 @@ function App() {
                     handleFilterByName={handleFilterByName}
                     filterByName={filterByName}
                     handleFilterBySpecie={handleFilterBySpecie}
+                    handleFilterByGender={handleFilterByGender}
                   />
 
                   <CharacterList

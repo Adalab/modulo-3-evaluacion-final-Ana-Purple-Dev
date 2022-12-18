@@ -1,5 +1,6 @@
 import FilterByName from './FilterByName';
 import FilterBySpecie from './FilterBySpecie';
+import FilterByGender from './FilterByGender';
 
 const Filters = (props) => {
   const handleSubmit = (ev) => {
@@ -13,6 +14,7 @@ const Filters = (props) => {
           filterByName={props.filterByName}
         />
         <FilterBySpecie handleFilterBySpecie={props.handleFilterBySpecie} />
+        <FilterByGender handleFilterByGender={props.handleFilterByGender} />
       </form>
     </>
   );
